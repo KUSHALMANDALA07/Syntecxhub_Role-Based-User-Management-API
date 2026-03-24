@@ -1,0 +1,15 @@
+meta {
+  name: Block User
+  type: http
+  seq: 6
+}
+
+patch {
+  url: http://localhost:5000/api/users/block/:id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  id: 
+}
