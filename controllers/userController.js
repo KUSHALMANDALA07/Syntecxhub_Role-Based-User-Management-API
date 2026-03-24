@@ -1,6 +1,5 @@
 const User = require("../models/User");
 
-// Get all users (admin)
 exports.getUsers = async (req, res) => {
 
   const users = await User.find().select("-password");
@@ -8,7 +7,6 @@ exports.getUsers = async (req, res) => {
   res.json(users);
 };
 
-// Promote user to admin
 exports.promoteUser = async (req, res) => {
 
   const user = await User.findById(req.params.id);
@@ -22,7 +20,6 @@ exports.promoteUser = async (req, res) => {
   res.json({ message: "User promoted to admin" });
 };
 
-// Block user
 exports.blockUser = async (req, res) => {
 
   const user = await User.findById(req.params.id);
